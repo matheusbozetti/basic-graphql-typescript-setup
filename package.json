@@ -1,0 +1,39 @@
+{
+  "name": "basic-graphql-typescript-setup",
+  "version": "1.0.0",
+  "description": "Setup básico para aplicação GraphQL em TypeScript",
+  "main": "src/server.ts",
+  "author": "Matheus Bozetti",
+  "license": "MIT",
+  "scripts": {
+    "dev": "nodemon src/server.ts",
+    "start": "node dist/server.js",
+    "build": "npx tsc && cp -r src/*.graphql dist",
+    "build:windows": "npx tsc && xcopy src\\*.graphql dist /s",
+    "prod": "yarn build && yarn start",
+    "prod:windows": "yarn build:windows && yarn start"
+  },
+  "devDependencies": {
+    "@types/node": "^14.0.23",
+    "@typescript-eslint/eslint-plugin": "^3.7.0",
+    "@typescript-eslint/parser": "^3.7.0",
+    "eslint": "^7.5.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-config-standard": "^14.1.1",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.1",
+    "nodemon": "^2.0.4",
+    "prettier": "^2.0.5",
+    "ts-node": "^8.10.2",
+    "typescript": "^3"
+  },
+  "dependencies": {
+    "apollo-server": "^2.16.0",
+    "graphql": "^15.3.0",
+    "graphql-fields-list": "^2.1.3",
+    "graphql-import": "^1.0.2"
+  }
+}
